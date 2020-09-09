@@ -99,7 +99,7 @@ void linked_list_delete(node *head, int index){
     }
     del_node = cur->next;
     cur->next = cur->next->next;
-    free(cur->next);
+    free(del_node);
     head->count--;
 }
 
@@ -113,9 +113,9 @@ void linked_list_remove(node *head, int val){
         }
         cur = cur->next;
     }
-    rem_node = cur->next;
+    //rem_node = cur->next;
     cur->next = cur->next->next;
-    free(cur->next);
+    free(rem_node);
     head->count--;
 }
 
