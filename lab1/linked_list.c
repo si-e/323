@@ -113,7 +113,7 @@ void linked_list_remove(node *head, int val){
         }
         cur = cur->next;
     }
-    //rem_node = cur->next;
+    rem_node = cur->next;
     cur->next = cur->next->next;
     free(rem_node);
     head->count--;
