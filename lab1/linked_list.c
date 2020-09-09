@@ -144,14 +144,14 @@ int linked_list_get(node *head, int index){
 int linked_list_search(node *head, int val){
     node *cur = head;
     int index = 0;
-    while(val != cur->value){
-        if (cur->next == NULL){
-            return -1;
-        }
+    while(cur->next != NULL){
         cur = cur->next;
+        if (cur->value == val){
+            return index;
+        }
         index++;
     }
-    return index;
+    return -1;
 }
 
 /* search all indexes of val */
@@ -165,10 +165,6 @@ node *linked_list_search_all(node *head, int val){
             linked_list_append(res, index);
         }
         index++;
-    }
-    if (res->count == 0){
-        return NULL;
-    } else{   
+    }  
     return res;
-    }
 }
